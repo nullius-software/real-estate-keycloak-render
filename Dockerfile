@@ -3,6 +3,7 @@ FROM quay.io/keycloak/keycloak:26.1.2 AS builder
 ENV KC_HEALTH_ENABLED=true
 ENV KC_METRICS_ENABLED=true
 ENV KC_DB=postgres
+ENV KC_SPI_CONNECTIONS_JGROUPS_UDP_ENABLED=false
 
 WORKDIR /opt/keycloak
 RUN /opt/keycloak/bin/kc.sh build
@@ -22,4 +23,4 @@ ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 EXPOSE 8080
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start", "--optimized", "--http-host=0.0.0.0", "--spi-connections-jgroups-udp-enabled=false"]
+CMD ["start", "--optimized", "--http-host=0.0.0.0"]

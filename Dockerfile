@@ -43,6 +43,9 @@ ENV KC_HEALTH_ENABLED=true
 ENV KC_METRICS_ENABLED=true
 ENV KC_DB=postgres
 
+COPY server.crt /opt/keycloak/conf/server.crt
+COPY server.key /opt/keycloak/conf/server.key
+
 WORKDIR /opt/keycloak
 RUN /opt/keycloak/bin/kc.sh build
 

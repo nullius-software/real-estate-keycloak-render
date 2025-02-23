@@ -31,4 +31,4 @@ COPY server.key /opt/keycloak/conf/server.key
 
 EXPOSE 8080
 
-CMD ["start"]
+CMD ["start --optimized"]

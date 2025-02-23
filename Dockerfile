@@ -26,14 +26,6 @@
 # Usa la imagen oficial de Keycloak
 FROM quay.io/keycloak/keycloak:latest
 
-ENV KC_DB=postgres
-ENV KC_DB_URL=jdbc:postgresql://ep-fragrant-king-a5pr6l3i-pooler.us-east-2.aws.neon.tech/db_real_estate_keycloack?sslmode=require
-ENV KC_DB_USERNAME=neondb_owner
-ENV KC_DB_PASSWORD=npg_P6XhpCV2RANe
-
-ENV KEYCLOAK_ADMIN=admin
-ENV KEYCLOAK_ADMIN_PASSWORD=admin
-
 EXPOSE 8080
 
 CMD ["start"]

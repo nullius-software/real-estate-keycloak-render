@@ -56,4 +56,4 @@ COPY server.key /opt/keycloak/conf/server.key
 
 EXPOSE 8080
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start", "--optimized", "--https-certificate-file=/opt/keycloak/conf/server.crt", "--https-certificate-key-file=/opt/keycloak/conf/server.key", "--cache=local"]
+CMD ["start", "--optimized", "--https-certificate-file=/opt/keycloak/conf/server.crt", "--https-certificate-key-file=/opt/keycloak/conf/server.key", "--proxy-headers=forwarded", "--cache=local"]

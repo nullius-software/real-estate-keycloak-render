@@ -22,4 +22,4 @@ ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 EXPOSE 8080
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start", "--optimized", "--http-host=0.0.0.0", "--hostname=real-estate-keycloak-render.onrender.com", "--db-url=jdbc:postgresql://ep-fragrant-king-a5pr6l3i-pooler.us-east-2.aws.neon.tech/db_real_estate_keycloack?sslmode=require", "--db-username=neondb_owner", "--db-password=npg_P6XhpCV2RANe"]
+CMD ["start", "--optimized", "--http-host=0.0.0.0", "--hostname=real-estate-keycloak-render.onrender.com", "-Dquarkus.datasource.jdbc.acquisition-timeout=60s"]

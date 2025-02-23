@@ -17,9 +17,9 @@ ENV KC_DB_USERNAME=neondb_owner
 ENV KC_DB_PASSWORD=npg_P6XhpCV2RANe
 ENV KC_HTTP_PORT=8080
 ENV KC_HTTPS_PORT=8443
-#ENV KC_HTTP_ENABLED=true
+ENV KC_HTTP_ENABLED=true
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 EXPOSE 8080
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start", "--optimized", "--http-host=0.0.0.0", "--hostname=real-estate-keycloak-render.onrender.com", "--proxy-headers=forwarded", "-Dquarkus.datasource.jdbc.acquisition-timeout=60s", "--cache=local"]
+CMD ["start", "--optimized", "--http-host=0.0.0.0", "--hostname=https://real-estate-keycloak-render.onrender.com", "--proxy-headers=forwarded", "-Dquarkus.datasource.jdbc.acquisition-timeout=60s", "--cache=local"]

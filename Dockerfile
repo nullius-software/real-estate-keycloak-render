@@ -22,4 +22,4 @@ ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 EXPOSE 8080
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start", "--optimized", "--http-host=0.0.0.0", "--hostname=real-estate-keycloak-render.onrender.com", "--db-connection-timeout=60s"]
+CMD ["start", "--optimized", "--http-host=0.0.0.0", "--hostname=real-estate-keycloak-render.onrender.com", "--db-url=$KC_DB_URL", "--db-username=$KC_DB_USERNAME", "--db-password=$KC_DB_PASSWORD"]

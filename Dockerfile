@@ -51,6 +51,10 @@ FROM quay.io/keycloak/keycloak:26.1.2
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 WORKDIR /opt/keycloak
 
+ENV KC_DB_URL="jdbc:postgresql://ep-fragrant-king-a5pr6l3i-pooler.us-east-2.aws.neon.tech/db_real_estate_keycloack?sslmode=require"
+ENV KC_DB_USERNAME=neondb_owner
+ENV KC_DB_PASSWORD=npg_P6XhpCV2RANe
+
 COPY server.crt /opt/keycloak/conf/server.crt
 COPY server.key /opt/keycloak/conf/server.key
 

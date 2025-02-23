@@ -4,6 +4,7 @@ ENV KC_HEALTH_ENABLED=true
 ENV KC_METRICS_ENABLED=true
 ENV KC_DB=postgres
 ENV KC_SPI_CONNECTIONS_JGROUPS_UDP_ENABLED=false
+ENV KC_PROXY=edge
 
 WORKDIR /opt/keycloak
 RUN /opt/keycloak/bin/kc.sh build
@@ -18,9 +19,8 @@ ENV KC_DB_PASSWORD=npg_P6XhpCV2RANe
 ENV KC_HOSTNAME=real-estate-keycloak-render.onrender.com
 ENV KC_HTTP_PORT=8080
 ENV KC_HTTPS_PORT=8443
-ENV KC_PROXY=edge
 ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 EXPOSE 8080
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start", "--optimized", "--http-host=0.0.0.0", "--proxy=edge"]
+CMD ["start", "--optimized", "--http-host=0.0.0.0"]

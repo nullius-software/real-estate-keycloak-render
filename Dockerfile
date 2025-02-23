@@ -22,4 +22,4 @@ ENV KEYCLOAK_ADMIN=admin
 ENV KEYCLOAK_ADMIN_PASSWORD=admin
 EXPOSE 8080
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start", "--optimized", "--http-host=0.0.0.0", "--hostname=real-estate-keycloak-render.onrender.com", "-Dquarkus.datasource.jdbc.acquisition-timeout=60s", "-Dquarkus.infinispan.embedded.enabled=false"]
+CMD ["start", "--optimized", "--http-host=0.0.0.0", "--hostname=real-estate-keycloak-render.onrender.com", "-Dquarkus.datasource.jdbc.acquisition-timeout=60s", "--cache=local"]

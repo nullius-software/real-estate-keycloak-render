@@ -26,6 +26,9 @@
 # Usa la imagen oficial de Keycloak
 FROM quay.io/keycloak/keycloak:latest
 
+ENV KC_HTTPS_CERTIFICATE_FILE: /opt/keycloak/conf/server.crt
+ENV KC_HTTPS_CERTIFICATE_KEY_FILE: /opt/keycloak/conf/server.key
+
 EXPOSE 8080
 
 CMD ["start"]

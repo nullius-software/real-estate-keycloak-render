@@ -86,7 +86,6 @@ ENV KC_HTTP_RELATIVE_PATH=/auth
 ENV PROXY_ADDRESS_FORWARDING=true
 ENV KC_DB_USERNAME=$DB_USERNAME
 ENV KC_DB_PASSWORD=$DB_PASSWORD
-ENV KC_DB_URL_PROPERTIES='?sslmode=require'
 ENV KC_HOSTNAME_STRICT=false
 ENV KC_HOSTNAME=https://real-estate-keycloak-render.onrender.com
 ENV KC_HOSTNAME_ADMIN=https://real-estate-keycloak-render.onrender.com
@@ -100,7 +99,7 @@ ENV KC_PROXY_HEADERS=xforwarded
 ENV KEYCLOAK_ADMIN=$ADMIN
 ENV KEYCLOAK_ADMIN_PASSWORD=$ADMIN_PASSWORD
 ENV KB_DB=postgres
-ENV KC_DB_URL=jdbc:postgresql://${DB_URL}/${DB_DATABASE}
+ENV KC_DB_URL="jdbc:postgresql://${DB_URL}/${DB_DATABASE}?sslmode=require"
 
 # db may seem redundant but it is not
 RUN /opt/keycloak/bin/kc.sh build --db=postgres
@@ -127,7 +126,6 @@ ENV KC_HTTP_RELATIVE_PATH=/auth
 ENV PROXY_ADDRESS_FORWARDING=true
 ENV KC_DB_USERNAME=$DB_USERNAME
 ENV KC_DB_PASSWORD=$DB_PASSWORD
-ENV KC_DB_URL_PROPERTIES='?'
 ENV KC_HOSTNAME_STRICT=false
 ENV KC_HOSTNAME=https://real-estate-keycloak-render.onrender.com
 ENV KC_HOSTNAME_ADMIN=https://real-estate-keycloak-render.onrender.com
@@ -141,7 +139,7 @@ ENV KC_PROXY_HEADERS=xforwarded
 ENV KEYCLOAK_ADMIN=$ADMIN
 ENV KEYCLOAK_ADMIN_PASSWORD=$ADMIN_PASSWORD
 ENV KB_DB=postgres
-ENV KC_DB_URL=jdbc:postgresql://${DB_URL}/${DB_DATABASE}
+ENV KC_DB_URL='jdbc:postgresql://${DB_URL}/${DB_DATABASE}?sslmode=require'
 
 EXPOSE 8443
 EXPOSE 8444

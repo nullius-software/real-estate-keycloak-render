@@ -89,7 +89,7 @@ ENV KC_DB_PASSWORD=$DB_PASSWORD
 ENV KC_DB_URL_PROPERTIES='?sslmode=require'
 ENV KC_HOSTNAME_STRICT=false
 ENV KC_HOSTNAME=real-estate-keycloak-render.onrender.com
-ENV KC_HOSTNAME_ADMIN=real-estate-keycloak-render.onrender.com
+ENV KC_HOSTNAME_ADMIN=https://real-estate-keycloak-render.onrender.com
 ENV KC_HTTP_ENABLED=true
 ENV KC_HTTP_PORT=8443
 ENV KC_HTTPS_PORT=8444

@@ -149,4 +149,4 @@ EXPOSE 8444
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
 # even though we build, using --optimized disallows postgresql databases so we need this workaround https://github.com/keycloak/keycloak/issues/15898
 # in other words don't add optimzied here
-CMD ["start", "--db=postgres"]
+CMD ["start", "--db=postgres", "-Dquarkus.datasource.jdbc.acquisition-timeout=60s"]

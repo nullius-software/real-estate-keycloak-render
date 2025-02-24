@@ -58,4 +58,4 @@ COPY server.key /opt/keycloak/conf/server.key
 
 EXPOSE 8080
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
-CMD ["start", "--optimized", "--http-host=0.0.0.0", "--http-port=8080", "--hostname=real-estate-keycloak-render.onrender.com", "--https-certificate-file=/opt/keycloak/conf/server.crt", "--https-certificate-key-file=/opt/keycloak/conf/server.key", "--proxy-headers=xforwarded", "--cache=local", "-Dquarkus.datasource.jdbc.acquisition-timeout=60s"]
+CMD ["start", "--optimized", "--https-host=0.0.0.0", "--https-port=8080", "--hostname=real-estate-keycloak-render.onrender.com", "--https-certificate-file=/opt/keycloak/conf/server.crt", "--https-certificate-key-file=/opt/keycloak/conf/server.key", "--proxy-headers=xforwarded", "--cache=local", "-Dquarkus.datasource.jdbc.acquisition-timeout=60s"]

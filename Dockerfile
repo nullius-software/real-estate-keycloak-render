@@ -42,7 +42,7 @@ FROM quay.io/keycloak/keycloak:26.1.2 AS builder
 ENV KC_HEALTH_ENABLED=true
 ENV KC_METRICS_ENABLED=true
 ENV KC_DB=postgres
-ENV KC_CLUSTER=false
+ENV KC_SPI_CONNECTIONS_JGROUPS_UDP_ENABLED=false
 
 WORKDIR /opt/keycloak
 RUN /opt/keycloak/bin/kc.sh build
@@ -52,7 +52,6 @@ COPY --from=builder /opt/keycloak/ /opt/keycloak/
 WORKDIR /opt/keycloak
 
 ENV KC_HTTPS_PORT=8080
-ENV KC_HOSTNAME_STRICT=false
 
 COPY server.crt /opt/keycloak/conf/server.crt
 COPY server.key /opt/keycloak/conf/server.key

@@ -51,6 +51,8 @@ FROM quay.io/keycloak/keycloak:26.1.2
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 WORKDIR /opt/keycloak
 
+ENV KC_HTTPS_PORT=8080
+
 COPY server.crt /opt/keycloak/conf/server.crt
 COPY server.key /opt/keycloak/conf/server.key
 

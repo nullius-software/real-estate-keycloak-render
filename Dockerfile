@@ -32,7 +32,7 @@ ENV KC_PROXY_HEADERS=xforwarded
 ENV KEYCLOAK_ADMIN=$ADMIN
 ENV KEYCLOAK_ADMIN_PASSWORD=$ADMIN_PASSWORD
 ENV KB_DB=postgres
-ENV KC_DB_URL="jdbc:postgresql://${DB_URL}/${DB_DATABASE}?sslmode=require"
+ENV KC_DB_URL="postgres://postgres:${DB_PASSWORD}@${DB_URL}/${DB_DATABASE}"
 
 # db may seem redundant but it is not
 RUN /opt/keycloak/bin/kc.sh build --db=postgres
@@ -74,7 +74,7 @@ ENV KC_PROXY_HEADERS=xforwarded
 ENV KEYCLOAK_ADMIN=$ADMIN
 ENV KEYCLOAK_ADMIN_PASSWORD=$ADMIN_PASSWORD
 ENV KB_DB=postgres
-ENV KC_DB_URL='jdbc:postgresql://${DB_URL}/${DB_DATABASE}?sslmode=require'
+ENV KC_DB_URL="postgres://postgres:${DB_PASSWORD}@${DB_URL}/${DB_DATABASE}"
 
 EXPOSE 8443
 EXPOSE 8444
